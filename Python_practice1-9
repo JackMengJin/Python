@@ -1,0 +1,155 @@
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*-
+# email: mengjinxiang@foxmail.com
+# wechat: Mermory1
+# author: MrStart
+
+#1-9
+#下面哪些不能作为变量？
+#1、find     2、 _num    3、7val        4、add.       5、def     
+#6、pan      7、-print   8、open_file   9、FileName   10、9prints  
+#11、INPUT   12、ls      13、user^name  14、list1     15、str_
+#16、_888    17、is      18、true       19、none      20、try  
+print('答案：经过尝试和确认，以下3、4、5、7、10、13、17、20不能作为变量。\n')
+
+#请描述以下变量的命名规范
+print('答案：变量的命令规范如下：')
+print('1.只能使用数字，字母，下划线作为变量名，不能包含空格；')
+print('2.数字不能作为变量名的开头，变量名的首部必须是字母或下划线；')
+print('3.Python关键字和函数名不能作为变量名使用；')
+print('4.尽量不要使用拼音作为变量名，变量名应具有描述性，让人好理解。\n')
+
+#Python如何添加注释
+#这是一个注释
+'''这也是一个注释'''
+#使用ctrl + /键可以快速将选中的内容变成注释
+print('答案：#号后加注释内容，或两个三引号之间也可以添加内容作为注释。')
+
+#现在有字符串：str1 = 'python cainiao 666'，请找出第 5 个字符。
+str1 = 'python cainiao 666'
+#因为字符串索引从0开始，所以第五个字符的索引是4
+num_5 = str1[4]
+#打印答案
+print('答案：')
+print('字符串str1的第五个字符是',num_5)
+print('')
+
+#现在有字符串：str1 = 'python cainiao 666'，请复制一份字符串，保存为 str_two
+#声明变量str_two，复制变量str1的值
+str_two = str1
+#打印答案
+print('答案：')
+print('被复制的字符串内容：',str1)
+print('字符串str_two复制后的内容为：',str_two)
+print('')
+
+#请找出最中间的字符，字符串长度是偶数。
+"""
+由于题目要求字符串长度是偶数，所以这里我使用while循环，
+在出现用户输入字符串长度为奇数的时候，可以持续循环，
+直到输入正确的字符串（长度为偶数）为止。
+"""
+print('答案：')
+while True:
+    #声明变量str3，并赋值用户输入的字符串的值
+    str3 = input('请您输入字符串长度是偶数的字符串：')
+    #利用模运算原理，余数不等于1的时候为奇数，如果输入的字符串长度是奇数
+    if len(str3) % 2 != 0:
+        #如果输入的字符串长度是奇数，打印
+        print('对不起，您输入的字符串长度不是偶数哦，请重新输入：')
+        #并跳出当前循环
+        continue
+    #声明变量str_len，并赋值str3字符串长度的值
+    str_len = len(str3)
+    """
+    由于字符串长度为偶数的情况下会有两个中间值
+    所以声明变量str_centre1和str_centre2，并赋值str3字符串中间值1和中间值2 
+    由于字符串索引从0开始，所以第一个中间字符为字符串长度除以2再减1
+    另一个中间字符为字符串长度除以2
+    由于除法的返回值为浮点数，所以这里要用整形转换一下模式
+    """
+    str_centre1 = int(str_len / 2 - 1)
+    str_centre2 = int(str_len / 2)
+    #打印字符串
+    print('您输入的字符串为：',str3)
+    # 打印字符串中间字符
+    print('这个字符串最中间的字符为：',str3[str_centre1],'和',str3[str_centre2])
+    break
+
+#字符串长度不确定的情况找出中间字符
+print('')
+print('答案：')
+#声明变量str4，并赋值用户输入的字符串的值
+str4 = input('请您输入一个字符串：')
+# 声明变量str_len4，并赋值str4字符串长度的值
+str_len4 = len(str4)
+#利用模运算原理，余数不等于1的时候为奇数，如果输入的字符串长度是奇数
+if len(str4) % 2 != 0:
+        #如果输入的字符串长度是奇数
+        str_centre3 = int(str_len4 / 2)
+        print('您输入的是长度为奇数的字符串，内容是：',str4)
+        print('这个字符串最中间的字符为：', str4[str_centre3])
+        #并跳出当前循环
+else:
+    #输入的字符串长度是偶数
+    str_centre4 = int(str_len4 / 2 - 1)
+    str_centre5 = int(str_len4 / 2)
+    # 打印字符串
+    print('您输入的是长度为偶数的字符串，内容是：', str4)
+    # 打印字符串中间字符
+    print('这个字符串最中间的字符为：', str4[str_centre4], '和', str4[str_centre5])
+
+#卖橘子的计算器：写一段代码，提示用户输入橘子的价格，和重量，最后计算出应该支付的金额。
+print('')
+print('答案：')
+#声明变量，赋值用户输入的单价，转换为浮点类型
+orange_price = float(input('请输入橘子的单价（单位：元/公斤）：'))
+#声明变量，赋值用户输入的重量，转换为浮点类型
+orange_weight = float(input('请输入橘子的重量（单位：公斤）：'))
+#单价乘数量等于总价
+orange_prices = orange_price * orange_weight
+#打印出总价格
+print('您应支付橘子的总金额为：',orange_prices,'元。')
+
+#演练字符串操作、
+print('')
+print('答案：')
+my_hobby = "Never stop learning!"
+
+#打印字符串
+print('先打印一下字符串内容：',my_hobby)
+
+# 截取从 位置2 ~ 位置6 的字符串
+str_cut26 = my_hobby[1:6]
+#打印截取的字符串
+print("截取从位置2~位置6的字符串:",str_cut26)
+
+# 截取从 位置2 ~ 末尾 的字符串
+str_cut_end = my_hobby[1:]
+#打印截取的字符串
+print('截取从位置2~末尾的字符串:',str_cut_end)
+
+# 截取从 开始位置~ 位置6 的字符串
+str_cut_start = my_hobby[:6]
+#打印截取的字符串
+print('截取从开始位置~位置6的字符串:',str_cut_start)
+
+# 截取完整的字符串
+str_cut_all = my_hobby[::]
+#打印截取的字符串
+print('截取完整的字符串:',str_cut_all)
+
+# 从 索引3 开始，每2个字符中取一个字符
+str_cut_3len2 = my_hobby[3::2]
+#打印截取的字符串
+print('从索引3开始，每2个字符中取一个字符:',str_cut_3len2)
+
+# 截取字符串末尾两个字符
+str_cut_end = my_hobby[-2:]
+#打印截取的字符串
+print('截取字符串末尾两个字符:',str_cut_end)
+
+# 字符串的倒序
+str_order = my_hobby[::-1]
+#打印截取的字符串
+print('字符串的倒序:',str_order)
